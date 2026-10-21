@@ -1,0 +1,30 @@
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      HUB_SECRET: ${HUB_SECRET}
+      HUB_INVITE_CODE: ${HUB_INVITE_CODE}
+      HUB_AI_API_KEY: ${HUB_AI_API_KEY}
+      HUB_AI_BASE_URL: ${HUB_AI_BASE_URL}
+      HUB_AI_MODEL: ${HUB_AI_MODEL}
+      HUB_TELEGRAM_BOT_TOKEN: ${HUB_TELEGRAM_BOT_TOKEN}
+    volumes:
+      - ./data:/app/data
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
