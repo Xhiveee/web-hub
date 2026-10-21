@@ -6,7 +6,7 @@
 - Не удалять существующие комментарии, если это не запрошено.
 
 ## Git и репозиторий
-- Remote: `git@github.com:Xhiveee/web-hub.git`
+- Remote: HTTPS URL в install.sh, SSH `git@github.com:Xhiveee/web-hub.git` для локальной разработки
 - Коммитить ТОЛЬКО по прямому запросу владельца. Без запроса — никаких commit/push/force-push/rebase.
 - Никогда: `--force`, `git config` изменения, hook-skips, `--amend` после пуша, empty commits.
 - Коммит-сообщение: Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`), 1 строка, без точек.

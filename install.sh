@@ -2,7 +2,7 @@
 set -eu
 
 DEST="/opt/hub"
-REPO="git@github.com:Xhiveee/web-hub.git"
+REPO="https://github.com/Xhiveee/web-hub.git"
 
 echo "== Web Hub installer =="
 
